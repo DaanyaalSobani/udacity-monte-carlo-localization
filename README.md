@@ -1,23 +1,32 @@
-# Udacity_MonteCarloLocalization_Project
- The third Project in the Udacity Robotics Software Engineering Course
-## Localization Screenshot
-![gazeboPix](https://user-images.githubusercontent.com/22554139/127042083-8184552b-4b18-49a9-b2be-67066e4e8239.png)
-![Rviz](https://user-images.githubusercontent.com/22554139/127042093-bec7acea-7fe2-4603-9f9b-7a7c071f7b94.png)
-## How to use:
-After cloning the repo into the src directory of a catkin_ws
-1. Source the setup.bash
-```
+# udacity-monte-carlo-localization
+
+The third project in the [Udacity Robotics Software Engineering Nanodegree](https://www.udacity.com/course/robotics-software-engineer--nd209).
+
+Implements Monte Carlo Localisation (MCL) — also known as a particle filter — using the [Adaptive Monte Carlo Localisation (AMCL)](http://wiki.ros.org/amcl) ROS package to localise a robot within a known map.
+
+## Stack
+
+- [ROS](https://www.ros.org/) (Robot Operating System)
+- [Gazebo](http://gazebosim.org/) — physics simulation
+- [AMCL](http://wiki.ros.org/amcl) — particle filter localisation
+- `teleop_twist_keyboard` — keyboard teleoperation
+
+## Usage
+
+After building the catkin workspace:
+
+```bash
 source devel/setup.bash
-```
 
-2. Launch the gazebo world and the robot.
-```
+# Launch simulation world and robot
 roslaunch my_robot world.launch
-```
 
-3. Launch the navigation stack.
-```
+# Launch AMCL localisation stack in a separate terminal
 roslaunch main amcl.launch
 ```
 
-4. Set navigation goal using teleop or 2D nav-goal in Rviz
+Set a 2D Nav Goal in RViz or drive with `teleop_twist_keyboard` — watch the particle cloud converge as the robot localises itself.
+
+## Screenshots
+
+![Gazebo simulation](Localization.png)
